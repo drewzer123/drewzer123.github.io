@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <title>For My Love</title>
     <meta
       name="description"
@@ -46,6 +47,7 @@
 
         <div class="hero-card">
           <div class="photo-frame">
+            <img class="photo" src="images/IMG_6219.JPG" alt="Drew and Taylor" />
             <div class="heart-badge">❤</div>
             <div class="mini-card">
               <span class="label">My Love</span>
@@ -102,33 +104,45 @@
           </article>
         </div>
       </section>
+      </section>
 
-      <section class="timeline reveal">
+      <section id="roulette" class="roulette reveal">
         <div class="section-heading">
-          <p class="eyebrow">Our little moments</p>
-          <h2>Every day with you is a memory worth keeping.</h2>
+          <p class="eyebrow">A little surprise</p>
+          <h2>Pick your prize. Choose wisely — once it’s yours, it’s final.</h2>
         </div>
 
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="dot"></div>
-            <div class="content">
-              <span>Whenever we laugh</span>
-              <p>The world slows down and feels perfect for a moment.</p>
+        <div class="roulette-wrap">
+          <div class="wheel-shell">
+            <div class="wheel-pointer"></div>
+            <div class="wheel" aria-label="Gift roulette wheel">
+              <div class="wheel-slice slice-1">✦</div>
+              <div class="wheel-slice slice-2">💆‍♀️</div>
+              <div class="wheel-slice slice-3">❓</div>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="dot"></div>
-            <div class="content">
-              <span>Whenever you are near</span>
-              <p>Everything feels calmer, warmer, and a little more magical.</p>
+
+          <div class="roulette-panel">
+            <p class="roulette-label">Choose your reward</p>
+            <div class="choice-grid">
+              <button class="gift-choice" data-prize="Tattoo voucher" data-reveal="A tattoo voucher, because you deserve something permanent and beautiful." data-emoji="✦🖤✨">
+                <span class="choice-icon">✦</span>
+                <span>Tattoo voucher</span>
+              </button>
+              <button class="gift-choice" data-prize="Massage coupon" data-reveal="A massage coupon, because you deserve relaxation and a little extra pampering." data-emoji="💆‍♀️✨💖">
+                <span class="choice-icon">✨</span>
+                <span>Massage coupon</span>
+              </button>
+              <button class="gift-choice mystery" data-prize="Mystery prize" data-reveal="A puppy! You picked the mystery box and the surprise is a tiny bundle of joy." data-emoji="🐾🐶💖">
+                <span class="choice-icon">🐾</span>
+                <span>Mystery</span>
+              </button>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="dot"></div>
-            <div class="content">
-              <span>Whenever I think of us</span>
-              <p>I am reminded that love isn’t just a feeling — it is home.</p>
+
+            <div class="surprise-burst" id="surpriseBurst" aria-hidden="true"></div>
+            <div class="result-box" id="giftResult" aria-live="polite">
+              <p class="result-title">Your surprise will appear here</p>
+              <p class="result-text">Choose a prize and make it official.</p>
             </div>
           </div>
         </div>
@@ -138,13 +152,13 @@
         <div class="letter-card">
           <p class="eyebrow">A love note</p>
           <blockquote>
-            “My love, you are my favorite adventure, my softest place, and my biggest joy.
-            Thank you for being the kind of person who makes life brighter, gentler, and so
-            much more beautiful. I love you more than words can say, and I hope every day,
-            you know how deeply you are cherished.”
+            “Happy birthday/aniversary! I want you to know that you are the best thing that has ever happened to me.
+            and that I am so grateful to have you in my life. Since you have moved in, Life has felt more and more rewarding every day.
+            Even when we face challenges, you make everything better. And to show my appreciation I made this website for you! its my first time doing
+            anything like this and I hope you love it!”
           </blockquote>
           <p class="signature">Always yours,</p>
-          <p class="signature name">Your one and only</p>
+          <p class="signature name">Andrew P lilley</p>
         </div>
       </section>
     </main>
@@ -152,6 +166,17 @@
     <footer class="footer reveal">
       <p>Made with all my heart for the love of my life.</p>
     </footer>
+
+    <div class="winner-overlay" id="winnerOverlay" aria-live="assertive">
+      <button class="winner-close" id="winnerClose" aria-label="Close prize reveal">×</button>
+      <div class="winner-burst"></div>
+      <div class="winner-card">
+        <p class="winner-tag">LIMITED EDITION LOVE PRIZE</p>
+        <div class="winner-emoji" id="winnerEmoji" aria-hidden="true">✨</div>
+        <h3 id="winnerTitle">YOU WON</h3>
+        <p id="winnerText">A surprise made just for you.</p>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
